@@ -1,0 +1,33 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+  background-color: #fafafa;
+  color: #333;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  background-color: #eee;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #0077cc;
+}
