@@ -1,27 +1,61 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Artist Portfolio</title>
-  <link rel="stylesheet" href="css/style.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gallery — Haley</title>
+<link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-  <!-- NAVIGATION WILL GO HERE -->
-  <header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="gallery.html">Works</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="resume.html">Resume</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+<header>
+<nav>
+<a href="/index.html">Home</a>
+<a href="/about.html">About</a>
+<a href="/gallery.html" aria-current="page">Gallery</a>
+<a href="/contact.html">Contact</a>
+</nav>
+<h1>Haley — Portfolio</h1>
+</header>
 
-  <!-- PAGE-SPECIFIC CONTENT GOES HERE -->
+<main>
+<section class="gallery-controls" aria-label="Gallery controls">
+<label for="filter">Filter:</label>
+<select id="filter" aria-label="Filter artwork by category">
+<option value="all">All</option>
+<option value="painting">Painting</option>
+<option value="drawing">Drawing</option>
+<option value="digital">Digital</option>
+</select>
+</section>
 
-  <script src="js/script.js"></script>
+<section id="gallery" class="masonry" aria-live="polite">
+<!-- Example items: add more, set data-category, make sure alt text is meaningful -->
+<figure class="masonry-item" data-category="painting">
+<img src="/images/gallery/image-01.jpg" alt="Study of a woman in blue dress" loading="lazy">
+<figcaption>Study of a woman in blue dress — 2024</figcaption>
+</figure>
+
+<figure class="masonry-item" data-category="digital">
+<img src="/images/gallery/image-02.jpg" alt="Surreal landscape with floating islands" loading="lazy">
+<figcaption>Floating Islands — Digital — 2023</figcaption>
+</figure>
+
+<!-- Add your images here -->
+</section>
+
+<!-- Lightbox modal -->
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+<button class="lightbox-close" aria-label="Close (Esc)">×</button>
+<button class="lightbox-prev" aria-label="Previous image">‹</button>
+<div class="lightbox-content">
+<img id="lightbox-img" alt="" src="">
+<p id="lightbox-caption"></p>
+</div>
+<button class="lightbox-next" aria-label="Next image">›</button>
+</div>
+
+</main>
+
+<script src="/js/script.js"></script>
 </body>
 </html>
