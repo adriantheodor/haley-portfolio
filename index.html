@@ -1,299 +1,327 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Haley — Visual Artist</title>
-  <link rel="stylesheet" href="css/styles.css" />
-  <style>
-    /* --- One-page layout enhancements --- */
-    body {
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      margin: 0;
-      background-color: #f8f8f8;
-      color: #222;
-      scroll-behavior: smooth;
-    }
-    header {
-      background-color: #fff;
-      padding: 1rem 2rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    header h1 {
-      font-size: 1.5rem;
-      margin: 0;
-      font-weight: 600;
-    }
-    nav a {
-      margin-left: 1.5rem;
-      text-decoration: none;
-      color: #444;
-      font-weight: 500;
-    }
-    nav a:hover {
-      color: #000;
-    }
-
-    section {
-      padding: 4rem 2rem;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    section h2 {
-      font-size: 2rem;
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    /* Gallery grid */
-    .masonry-grid {
-      columns: 3 250px;
-      column-gap: 1rem;
-    }
-    .masonry-item {
-      break-inside: avoid;
-      margin-bottom: 1rem;
-      cursor: pointer;
-      transition: transform 0.2s ease;
-    }
-    .masonry-item:hover {
-      transform: scale(1.02);
-    }
-    .masonry-item img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-    }
-
-    /* Lightbox */
-    .lightbox {
-      position: fixed;
-      inset: 0;
-      background-color: rgba(0,0,0,0.9);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      visibility: hidden;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    .lightbox[aria-hidden="false"] {
-      visibility: visible;
-      opacity: 1;
-    }
-    .lightbox img {
-      max-width: 90%;
-      max-height: 80%;
-      border-radius: 4px;
-    }
-    .lightbox button {
-      position: absolute;
-      background: none;
-      border: none;
-      color: #fff;
-      font-size: 2rem;
-      cursor: pointer;
-    }
-    .lightbox .close { top: 1rem; right: 1rem; }
-    .lightbox .prev { left: 2rem; }
-    .lightbox .next { right: 2rem; }
-    .lightbox figcaption {
-      color: #fff;
-      margin-top: 1rem;
-      text-align: center;
-      font-size: 1.1rem;
-    }
-
-    /* Contact */
-    .contact-info {
-      text-align: center;
-      font-size: 1.1rem;
-    }
-    .contact-info a {
-      color: #222;
-      text-decoration: underline;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      color: #888;
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 768px) {
-      .masonry-grid {
-        columns: 2 150px;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Haley — Visual Artist</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+      /* --- One-page layout enhancements --- */
+      body {
+        font-family: "Helvetica Neue", Arial, sans-serif;
+        margin: 0;
+        background-color: #f8f8f8;
+        color: #222;
+        scroll-behavior: smooth;
       }
-    }
-    @media (max-width: 480px) {
-      .masonry-grid {
-        columns: 1;
+      header {
+        background-color: #fff;
+        padding: 1rem 2rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      header h1 {
+        font-size: 1.5rem;
+        margin: 0;
+        font-weight: 600;
       }
       nav a {
-        margin-left: 0.5rem;
+        margin-left: 1.5rem;
+        text-decoration: none;
+        color: #444;
+        font-weight: 500;
       }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Haley Donahue — Visual Artist</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+      nav a:hover {
+        color: #000;
+      }
 
-  <main>
-    <section id="about">
-      <h2>About</h2>
-      <p style="text-align:center; max-width:700px; margin:0 auto;">
-        Artist in Boston, M.A. Specializing in family portraits, pet portraits, and more. Email for commissions, sales, and contact information.
-      </p>
-    </section>
+      section {
+        padding: 4rem 2rem;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+      section h2 {
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 2rem;
+      }
 
-    <section id="gallery">
-      <h2>Gallery</h2>
+      /* Gallery grid */
+      .masonry-grid {
+        columns: 3 250px;
+        column-gap: 1rem;
+      }
+      .masonry-item {
+        break-inside: avoid;
+        margin-bottom: 1rem;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+      }
+      .masonry-item:hover {
+        transform: scale(1.02);
+      }
+      .masonry-item img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
 
-      <div class="masonry-grid" id="galleryGrid">
-        <figure class="masonry-item" data-category="digital">
-          <img src="assets/oliver.jpg" alt="Artwork 2">
-          
-        </figure>
-        <figure class="masonry-item" data-category="drawing">
-          <img src="assets/parents.jpg" alt="Artwork 3">
-          
-        </figure>
-        <figure class="masonry-item" data-category="drawing">
-          <img src="assets/pia.jpg" alt="Artwork 4">
-          
-        </figure>
-        <figure class="masonry-item" data-category="drawing">
-          <img src="assets/tiggy.jpg" alt="Artwork 5">
-          
-        </figure>
-        <figure class="masonry-item" data-category="drawing">
-          <img src="assets/tiggy2.jpg" alt="Artwork 6">
-          
-        </figure>
-        <figure class="masonry-item" data-category="painting">
-          <img src="assets/flowers.jpg" alt="Artwork 1">
-        </figure>
-      </div>
+      /* Lightbox */
+      .lightbox {
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.9);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      .lightbox[aria-hidden="false"] {
+        visibility: visible;
+        opacity: 1;
+      }
+      .lightbox img {
+        max-width: 90%;
+        max-height: 80%;
+        border-radius: 4px;
+      }
+      .lightbox button {
+        position: absolute;
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 2rem;
+        cursor: pointer;
+      }
+      .lightbox .close {
+        top: 1rem;
+        right: 1rem;
+      }
+      .lightbox .prev {
+        left: 2rem;
+      }
+      .lightbox .next {
+        right: 2rem;
+      }
+      .lightbox figcaption {
+        color: #fff;
+        margin-top: 1rem;
+        text-align: center;
+        font-size: 1.1rem;
+      }
 
-      <!-- Lightbox -->
-      <div class="lightbox" id="lightbox" aria-hidden="true">
-        <button class="close" id="closeBtn" aria-label="Close">&times;</button>
-        <button class="prev" id="prevBtn" aria-label="Previous">&#10094;</button>
-        <figure>
-          <img id="lightboxImg" src="" alt="">
-          <figcaption id="lightboxCaption"></figcaption>
-        </figure>
-        <button class="next" id="nextBtn" aria-label="Next">&#10095;</button>
-      </div>
-    </section>
+      /* Contact */
+      .contact-info {
+        text-align: center;
+        font-size: 1.1rem;
+      }
+      .contact-info a {
+        color: #222;
+        text-decoration: underline;
+      }
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <div class="contact-info">
-        <p>Email: <a href="mailto:haleydonahue5@gmail.com">haleydonahue5@gmail.com</a></p>
-        <p>Instagram: <a href="https://www.instagram.com/haley.donahue.art/" target="_blank">@haley.donahue.art</a></p>
-      </div>
-    </section>
-  </main>
+      footer {
+        text-align: center;
+        padding: 2rem;
+        color: #888;
+        font-size: 0.9rem;
+      }
 
-  <footer>
-    <p>&copy; <span id="year"></span> Haley. All rights reserved.</p>
-  </footer>
+      @media (max-width: 768px) {
+        .masonry-grid {
+          columns: 2 150px;
+        }
+      }
+      @media (max-width: 480px) {
+        .masonry-grid {
+          columns: 1;
+        }
+        nav a {
+          margin-left: 0.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Haley Donahue — Visual Artist</h1>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
 
-  <script>
-    // smooth scroll (optional fallback)
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
+    <main>
+      <section id="about">
+        <h2>About</h2>
+        <p style="text-align: center; max-width: 700px; margin: 0 auto">
+          Artist in Boston, M.A. Specializing in family portraits, pet
+          portraits, and more. Email for commissions, sales, and contact
+          information.
+        </p>
+      </section>
+
+      <section id="gallery">
+        <h2>Gallery</h2>
+
+        <div class="masonry-grid" id="galleryGrid">
+
+          <figure class="masonry-item" data-category="drawing">
+            <img src="assets/parents.jpg" alt="Artwork 3" />
+          </figure>
+
+           <figure class="masonry-item" data-category="drawing">
+            <img src="assets/tiggy.jpg" alt="Artwork 5" />
+          </figure>
+
+          <figure class="masonry-item" data-category="drawing">
+            <img src="assets/pia.jpg" alt="Artwork 4" />
+          </figure>
+
+          <figure class="masonry-item" data-category="drawing">
+            <img src="assets/tiggy2.jpg" alt="Artwork 6" />
+          </figure>
+
+          <figure class="masonry-item" data-category="digital">
+            <img src="assets/oliver.jpg" alt="Artwork 2" />
+          </figure>
+
+          <figure class="masonry-item" data-category="painting">
+            <img src="assets/flowers.jpg" alt="Artwork 1" />
+          </figure>
+
+        </div>
+
+        <!-- Lightbox -->
+        <div class="lightbox" id="lightbox" aria-hidden="true">
+          <button class="close" id="closeBtn" aria-label="Close">
+            &times;
+          </button>
+          <button class="prev" id="prevBtn" aria-label="Previous">
+            &#10094;
+          </button>
+          <figure>
+            <img id="lightboxImg" src="" alt="" />
+            <figcaption id="lightboxCaption"></figcaption>
+          </figure>
+          <button class="next" id="nextBtn" aria-label="Next">&#10095;</button>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <div class="contact-info">
+          <p>
+            Email:
+            <a href="mailto:haleydonahue5@gmail.com">haleydonahue5@gmail.com</a>
+          </p>
+          <p>
+            Instagram:
+            <a
+              href="https://www.instagram.com/haley.donahue.art/"
+              target="_blank"
+              >@haley.donahue.art</a
+            >
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; <span id="year"></span> Haley Donahue. All rights reserved.</p>
+    </footer>
+
+    <script>
+      // smooth scroll (optional fallback)
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
         });
       });
-    });
 
-    // gallery lightbox + filter
-    const gallery = document.querySelector('#galleryGrid');
-    const filter = document.querySelector('#filter');
-    const lightbox = document.querySelector('#lightbox');
-    const lightboxImg = document.querySelector('#lightboxImg');
-    const lightboxCaption = document.querySelector('#lightboxCaption');
-    const closeBtn = document.querySelector('#closeBtn');
-    const prevBtn = document.querySelector('#prevBtn');
-    const nextBtn = document.querySelector('#nextBtn');
+      // gallery lightbox + filter
+      const gallery = document.querySelector("#galleryGrid");
+      const filter = document.querySelector("#filter");
+      const lightbox = document.querySelector("#lightbox");
+      const lightboxImg = document.querySelector("#lightboxImg");
+      const lightboxCaption = document.querySelector("#lightboxCaption");
+      const closeBtn = document.querySelector("#closeBtn");
+      const prevBtn = document.querySelector("#prevBtn");
+      const nextBtn = document.querySelector("#nextBtn");
 
-    let items = Array.from(document.querySelectorAll('.masonry-item'));
-    let currentIndex = -1;
+      let items = Array.from(document.querySelectorAll(".masonry-item"));
+      let currentIndex = -1;
 
-    function openLightbox(index){
-      const item = items[index];
-      if(!item) return;
-      const img = item.querySelector('img');
-      lightboxImg.src = img.src;
-      lightboxImg.alt = img.alt || '';
-      lightboxCaption.textContent = item.querySelector('figcaption')?.textContent || '';
-      lightbox.setAttribute('aria-hidden','false');
-      currentIndex = index;
-      closeBtn.focus();
-    }
-
-    function closeLightbox(){
-      lightbox.setAttribute('aria-hidden','true');
-      lightboxImg.src = '';
-      currentIndex = -1;
-    }
-
-    function showNext(delta){
-      if(currentIndex === -1) return;
-      let newIndex = currentIndex + delta;
-      if(newIndex < 0) newIndex = items.length - 1;
-      if(newIndex >= items.length) newIndex = 0;
-      openLightbox(newIndex);
-    }
-
-    gallery.addEventListener('click', e => {
-      const fig = e.target.closest('.masonry-item');
-      if(!fig) return;
-      const index = items.indexOf(fig);
-      if(index >= 0) openLightbox(index);
-    });
-
-    closeBtn.addEventListener('click', closeLightbox);
-    prevBtn.addEventListener('click', () => showNext(-1));
-    nextBtn.addEventListener('click', () => showNext(1));
-
-    document.addEventListener('keydown', e => {
-      if(lightbox.getAttribute('aria-hidden') === 'false'){
-        if(e.key === 'Escape') closeLightbox();
-        if(e.key === 'ArrowLeft') showNext(-1);
-        if(e.key === 'ArrowRight') showNext(1);
+      function openLightbox(index) {
+        const item = items[index];
+        if (!item) return;
+        const img = item.querySelector("img");
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt || "";
+        lightboxCaption.textContent =
+          item.querySelector("figcaption")?.textContent || "";
+        lightbox.setAttribute("aria-hidden", "false");
+        currentIndex = index;
+        closeBtn.focus();
       }
-    });
 
-    filter.addEventListener('change', () => {
-      const val = filter.value;
-      items.forEach(i => {
-        const cat = i.getAttribute('data-category') || 'uncategorized';
-        i.style.display = (val === 'all' || val === cat) ? '' : 'none';
+      function closeLightbox() {
+        lightbox.setAttribute("aria-hidden", "true");
+        lightboxImg.src = "";
+        currentIndex = -1;
+      }
+
+      function showNext(delta) {
+        if (currentIndex === -1) return;
+        let newIndex = currentIndex + delta;
+        if (newIndex < 0) newIndex = items.length - 1;
+        if (newIndex >= items.length) newIndex = 0;
+        openLightbox(newIndex);
+      }
+
+      gallery.addEventListener("click", (e) => {
+        const fig = e.target.closest(".masonry-item");
+        if (!fig) return;
+        const index = items.indexOf(fig);
+        if (index >= 0) openLightbox(index);
       });
-      items = Array.from(document.querySelectorAll('.masonry-item')).filter(i => i.style.display !== 'none');
-    });
 
-    // dynamic year in footer
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-</body>
+      closeBtn.addEventListener("click", closeLightbox);
+      prevBtn.addEventListener("click", () => showNext(-1));
+      nextBtn.addEventListener("click", () => showNext(1));
+
+      document.addEventListener("keydown", (e) => {
+        if (lightbox.getAttribute("aria-hidden") === "false") {
+          if (e.key === "Escape") closeLightbox();
+          if (e.key === "ArrowLeft") showNext(-1);
+          if (e.key === "ArrowRight") showNext(1);
+        }
+      });
+
+      filter.addEventListener("change", () => {
+        const val = filter.value;
+        items.forEach((i) => {
+          const cat = i.getAttribute("data-category") || "uncategorized";
+          i.style.display = val === "all" || val === cat ? "" : "none";
+        });
+        items = Array.from(document.querySelectorAll(".masonry-item")).filter(
+          (i) => i.style.display !== "none"
+        );
+      });
+
+      // dynamic year in footer
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
 </html>
