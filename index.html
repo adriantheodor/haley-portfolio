@@ -147,6 +147,28 @@
           margin-left: 0.5rem;
         }
       }
+
+      @media (max-width: 600px) {
+        header {
+          flex-direction: column; /* Stacks items vertically */
+          text-align: center; /* Centers the text */
+          gap: 1rem; /* Adds space between Name and Nav */
+        }
+
+        header h1 {
+          font-size: 1.3rem; /* Slightly smaller font for mobile */
+        }
+
+        nav {
+          width: 100%; /* Ensures nav takes full width */
+          display: flex;
+          justify-content: center; /* Centers the links */
+        }
+
+        nav a {
+          margin: 0 10px; /* Even spacing between links */
+        }
+      }
     </style>
   </head>
   <body>
@@ -173,7 +195,6 @@
         <h2>Gallery</h2>
 
         <div class="masonry-grid" id="galleryGrid">
-
           <figure class="masonry-item" data-category="drawing">
             <img src="assets/Cat.jpg" alt="Artwork 3" />
           </figure>
@@ -182,7 +203,7 @@
             <img src="assets/parents.jpg" alt="Artwork 3" />
           </figure>
 
-           <figure class="masonry-item" data-category="drawing">
+          <figure class="masonry-item" data-category="drawing">
             <img src="assets/tiggy.jpg" alt="Artwork 5" />
           </figure>
 
@@ -201,7 +222,6 @@
           <figure class="masonry-item" data-category="painting">
             <img src="assets/flowers.jpg" alt="Artwork 1" />
           </figure>
-
         </div>
 
         <!-- Lightbox -->
@@ -311,17 +331,6 @@
           if (e.key === "ArrowLeft") showNext(-1);
           if (e.key === "ArrowRight") showNext(1);
         }
-      });
-
-      filter.addEventListener("change", () => {
-        const val = filter.value;
-        items.forEach((i) => {
-          const cat = i.getAttribute("data-category") || "uncategorized";
-          i.style.display = val === "all" || val === cat ? "" : "none";
-        });
-        items = Array.from(document.querySelectorAll(".masonry-item")).filter(
-          (i) => i.style.display !== "none"
-        );
       });
 
       // dynamic year in footer
